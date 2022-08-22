@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Body</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --border__radius: 8px;
+        --golden-color: #deb365;
+      }
+
+      .wrapper {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1160px;
+      }
+
+      .header__wrapper {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(142, 141, 146, 1) 100%
+        );
+        padding-bottom: 20px;
+      }
+
+      .header {
+        height: 560px;
+        background-image: url(images/sample\ cover.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0 0 var(--border__radius) var(--border__radius);
+      }
+
+      .img-responsive {
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      .description__section {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .dp__meta__section {
+        flex: 1;
+        text-align: center;
+      }
+
+      .dp {
+        margin-top: -130px !important;
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        border: 5px solid white;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .profile__name {
+        margin-top: 20px;
+        font-size: 21px;
+      }
+
+      .username {
+        margin: 2px 0;
+      }
+
+      .follower__following {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .designation,
+      .location {
+        font-size: 15px;
+      }
+      /* Bio + Follow CSS */
+
+      .bio__follow {
+        flex: 2;
+        position: relative;
+      }
+
+      .cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .cta__btn {
+        background: rgb(227, 197, 115);
+        background: linear-gradient(
+          104deg,
+          rgba(227, 197, 115, 1) 0%,
+          rgba(219, 171, 95, 1) 100%
+        );
+        border: none;
+        padding: 10px 25px;
+        color: #51514f;
+        border-radius: 10px;
+        box-shadow: 0 2px 20px -4px rgba(0, 0, 0, 0.16);
+        width: 100%;
+        text-align: center;
+        max-width: 150px;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      .bio {
+        margin-top: 20px;
+      }
+
+      .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .social__btn {
+        display: grid;
+        text-decoration: none;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        margin: 5px;
+        background-color: var(--golden-color);
+        border-radius: 50%;
+        color: white;
+      }
+
+      .hamburger {
+        outline: none;
+        border: none;
+        font-size: 20px;
+        color: var(--golden-color);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: transparent;
+      }
+
+      .hamburger:hover {
+        cursor: pointer;
+      }
+
+      .body__section {
+        background-color: #f0f2f6;
+        padding-top: 10px;
+        padding-bottom: 450px;
+      }
+
+      .slide__navbar {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        background-color: white;
+        border-radius: 0 0 var(--border__radius) var(--border__radius);
+        position: relative;
+        padding: 5px 0px;
+      }
+
+      .nav__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        outline: none;
+        border: none;
+        font-size: 20px;
+        color: #e5e8ec;
+        background-color: transparent;
+      }
+
+      .nav__arrow:hover {
+        cursor: pointer;
+      }
+
+      .left {
+        left: 5%;
+      }
+
+      .right {
+        right: 5%;
+      }
+
+      .slide__nav__button {
+        text-decoration: none;
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+        padding: 10px;
+        margin: 10px;
+        background-color: white;
+        color: var(--golden-color);
+        border-radius: var(--border__radius);
+        transition: 0.25s;
+        box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.27);
+      }
+
+      .slide__nav__button:hover {
+        background-color: var(--golden-color);
+        color: white;
+      }
+
+      .slide__nav__button i {
+        display: block;
+        font-size: 21px;
+      }
+
+      .photos__section {
+        padding: 20px;
+        background-color: white;
+        border-radius: var(--border__radius);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .images__items {
+        width: 32%;
+        max-width: 500px;
+        aspect-ratio: 1 / 1;
+        margin: 10px 0px;
+        border-radius: var(--border__radius);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .images__items:hover .stats {
+        opacity: 1;
+        transform: translate(0px, 0px);
+      }
+
+      .stats {
+        opacity: 0;
+        transform: translate(0px, 20px);
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(21, 21, 22, 0.6026785714285714) 50%,
+          rgba(142, 141, 146, 0) 100%
+        );
+        color: white;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        padding-bottom: 25px;
+        transition: all 0.3s;
+      }
+
+      .hamburger__image {
+        outline: none;
+        border: none;
+        font-size: 20px;
+        color: var(--golden-color);
+        background-color: transparent;
+      }
+
+      .footer {
+        padding: 10px 0px;
+      }
+
+      .footer__section {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+
+      .footer__menu {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+
+      .copyright,
+      .footer__menu {
+        flex: 1;
+      }
+
+      .footer__menu a {
+        text-decoration: none;
+        font-size: 14px;
+        margin-left: 20px;
+        color: #51514f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cover Pic Section -->
+    <div class="header__wrapper">
+      <div class="wrapper header"></div>
+
+      <!-- Description Sec -->
+
+      <div class="wrapper description__section">
+        <!-- DP + Meta Info -->
+        <div class="dp__meta__section">
+          <div class="dp">
+            <img class="img-responsive" src="images/DP.jpg" alt="" />
+          </div>
+
+          <h3 class="profile__name">Natali Thanou</h3>
+          <p class="username">@natalithanou</p>
+          <div class="follower__following">
+            <div class="followers">
+              <span><b>125k</b></span> followers
+            </div>
+            <div class="following"><b>100</b> following</div>
+          </div>
+
+          <p class="designation">Model - Singer - Dancer</p>
+          <p class="location">Sydney, Australia</p>
+        </div>
+
+        <!-- Bio + Follow Section -->
+
+        <div class="bio__follow">
+          <div class="cta">
+            <a href="#" class="cta__btn">
+              <i class="fa-solid fa-user-plus"></i> Follow
+            </a>
+            <a href="#" class="cta__btn">
+              <i class="fa-brands fa-facebook-messenger"></i> Contact
+            </a>
+          </div>
+
+          <p class="bio">
+            I am a Model, Singer, and Dancer with 12 years exprience in the
+            media and have my own studio in Sydney, Australia. For booking, you
+            can contact my manager by sending me a message.
+          </p>
+
+          <div class="social">
+            <a href="#" class="social__btn"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="#" class="social__btn"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social__btn"
+              ><i class="fa-solid fa-globe"></i
+            ></a>
+            <a href="#" class="social__btn"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" class="social__btn"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+
+          <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="body__section">
+      <div class="wrapper slide__navbar">
+        <button class="nav__arrow left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <a class="slide__nav__button" href="#"
+          ><i class="fa-solid fa-info"></i> About</a
+        >
+        <a class="slide__nav__button" href="#"
+          ><i class="fa-solid fa-images"></i> Photos</a
+        >
+        <a class="slide__nav__button" href="#"
+          ><i class="fa-brands fa-youtube"></i> Videos</a
+        >
+        <a class="slide__nav__button" href="#"
+          ><i class="fa-solid fa-volume-high"></i> Audios</a
+        >
+        <a class="slide__nav__button" href="#"
+          ><i class="fa-solid fa-file-lines"></i> Articles</a
+        >
+        <a class="slide__nav__button" href="#"
+          ><i class="fa-solid fa-calendar-days"></i> Events</a
+        >
+
+        <button class="nav__arrow right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="wrapper photos__section">
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="images__items">
+          <img class="img-responsive" src="images/DP.jpg" alt="" />
+          <div class="stats">
+            <p>543 <i class="fa-solid fa-comment-dots"></i></p>
+            <p>123k <i class="fa-solid fa-heart"></i></p>
+            <p>10 <i class="fa-solid fa-share"></i></p>
+            <button class="hamburger__image">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper footer">
+      <div class="footer__section">
+        <p class="copyright">© 2022 IMAJH</p>
+
+        <div class="footer__menu">
+          <a href="#">Home</a>
+          <a href="#">Help</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
