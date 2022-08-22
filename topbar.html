@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>IMAJH Top Bar</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --grey: #e5e8ec;
+      }
+
+      /* Common Class for library use purpose */
+
+      .img-responsive {
+        max-width: 100%;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      .logo,
+      .search__bar,
+      .nav__options {
+        flex: 1;
+        padding: 15px 10px;
+      }
+
+      .logo {
+        text-align: left;
+      }
+
+      .search__bar {
+        text-align: center;
+        position: relative;
+      }
+
+      .search__icon {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translate(0%, -50%);
+      }
+
+      .search__bar > input {
+        width: 100%;
+        padding-left: 40px;
+        height: 25px;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        background-color: var(--grey);
+        outline: none;
+      }
+
+      .search__bar > input:focus {
+        border: 1px solid #e2c270;
+      }
+
+      /* Nav Options */
+
+      .nav__options {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .search__icon {
+        left: 10%;
+      }
+
+      .nav__buttons {
+        width: 30px;
+        height: 30px;
+        padding: 3px;
+        background-color: var(--grey);
+        border-radius: 50%;
+        margin: 0 5px;
+        display: grid;
+        place-items: center;
+      }
+
+      /* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+      @media (min-width: 320px) and (max-width: 480px) {
+        .nav {
+          flex-direction: column;
+        }
+
+        .nav__options {
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logo">
+        <img class="img-responsive" src="images/logo.png" alt="" />
+      </div>
+
+      <div class="search__bar">
+        <img
+          class="search__icon img-responsive"
+          src="images/search-icon.png"
+          alt=""
+        />
+        <input type="text" placeholder="Search.." />
+      </div>
+
+      <div class="nav__options">
+        <a href="#" class="nav__buttons"
+          ><img class="img-responsive" src="images/home-icon.png" alt=""
+        /></a>
+        <a href="#" class="nav__buttons"
+          ><img class="img-responsive" src="images/message-icon.png" alt=""
+        /></a>
+        <a href="#" class="nav__buttons"
+          ><img
+            class="img-responsive"
+            src="images/notification-icon.png"
+            alt=""
+        /></a>
+        <a href="#" class="nav__buttons"
+          ><img class="img-responsive" src="images/home-icon.png" alt=""
+        /></a>
+        <a href="#" class="nav__buttons"
+          ><img class="img-responsive" src="images/settings-icon.png" alt=""
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>
